@@ -78,8 +78,7 @@ def enumerate_subdomain(url, word, progress):
         sys.exit(1)
     except:
         request = 0
-        status = f'URL: {full_url}\t\t\t\tStatus: This website cannot be accessed'
-    
+        status = f'URL: {full_url}\t\t\t\tStatus: This website cannot be accessed'    
     progress.status(status)
 
     if type(request) is requests.models.Response:
@@ -117,6 +116,8 @@ def enumerate(url, dictionary, option, time_op):
                     enumerate_subdomain(url, word, progress) 
             if time_op != None: 
                 time.sleep(time_op)
+            elif option ==2:
+                time.sleep(0.4)
     else:
         pass
 
